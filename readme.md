@@ -48,7 +48,7 @@ Antes de rodar a aplicação, certifique-se de ter instalado:
 
 2. **Crie e inicie os containers**  
    ```sh
-   docker-compose up -d
+   docker-compose up -d --build
    ```
 
 3. **Acesse os logs (opcional)**  
@@ -60,7 +60,6 @@ Antes de rodar a aplicação, certifique-se de ter instalado:
   Automaticamente a API já executar as migrations e seeds, mas ser precisar segue o comando
    ```sh
    docker exec -it api-teste-sps npm run migration:run
-   docker exec -it api-teste-sps npm run seed:run
    ```
 
 5. **A API estará rodando em:**  
@@ -91,17 +90,13 @@ Antes de rodar a aplicação, certifique-se de ter instalado:
    npm run migration:run
    ```
 
-5. **Rodar os seeds**  
-   ```sh
-   npm run seed:run
-   ```
 
-6. **Iniciar a aplicação em modo desenvolvimento**  
+5. **Iniciar a aplicação em modo desenvolvimento**  
    ```sh
    npm run dev
    ```
 
-7. **Iniciar a aplicação em modo produção**  
+6. **Iniciar a aplicação em modo produção**  
    ```sh
    npm run build
    npm start
@@ -138,7 +133,6 @@ Antes de rodar a aplicação, certifique-se de ter instalado:
 | `npm run migration:generate --name NomeDaMigration` | Gera uma nova migration |
 | `npm run migration:run` | Executa as migrations pendentes |
 | `npm run migration:revert` | Reverte a última migration |
-| `npm run seed:run` | Executa os seeds de dados |
 
 ---
 
