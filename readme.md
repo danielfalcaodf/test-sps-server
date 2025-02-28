@@ -12,6 +12,7 @@ Esta é uma API para autenticação e gerenciamento de usuários.
 - [Endpoints](#endpoints)
   - [Auth](#auth)
   - [Users](#users)
+- [Swagger](#swagger)
 - [Comandos úteis](#comandos-úteis)
 
 ---
@@ -43,7 +44,7 @@ Antes de rodar a aplicação, certifique-se de ter instalado:
 1. **Clone o repositório**  
    ```sh
    git clone git@github.com:danielfalcaodf/test-sps-server.git
-   cd test-sps-serve
+   cd test-sps-server
    ```
 
 2. **Crie e inicie os containers**  
@@ -57,7 +58,7 @@ Antes de rodar a aplicação, certifique-se de ter instalado:
    ```
 
 4. **Executar as migrations e seeds no container**  
-  Automaticamente a API já executar as migrations e seeds, mas ser precisar segue o comando
+  Automaticamente a API já executar as migrations e seeds, mas se precisar segue o comando  
    ```sh
    docker exec -it api-teste-sps npm run migration:run
    ```
@@ -90,7 +91,6 @@ Antes de rodar a aplicação, certifique-se de ter instalado:
    npm run migration:run
    ```
 
-
 5. **Iniciar a aplicação em modo desenvolvimento**  
    ```sh
    npm run dev
@@ -122,7 +122,19 @@ Antes de rodar a aplicação, certifique-se de ter instalado:
 | `DELETE` | `/api/users/{id}` | Remove um usuário pelo ID |
 
 ---
+## Swagger
+A API possui documentação interativa no Swagger. Para acessá-la, utilize:
+```
+http://localhost:3001/swagger
+```
 
+Os endpoints disponíveis no Swagger incluem:
+- **Autenticação**: Login e registro de usuários.
+- **Gerenciamento de Usuários**: CRUD completo de usuários.
+
+Para acessar endpoints protegidos, é necessário autenticar-se utilizando um token JWT pelo botão "Authorize" no Swagger.
+
+---
 ## Comandos úteis
 
 | Comando | Descrição |
