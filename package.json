@@ -1,17 +1,38 @@
 {
   "name": "test-sps-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "dev": " nodemon --inspect=7000 src/index.js"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:generate": "npm run typeorm migration:generate -- -d src/_config/data-source.ts src/_migrations/$npm_config_name",
+    "migration:run": "npm run typeorm migration:run -- -d src/_config/data-source.ts",
+    "migration:revert": "npm run typeorm migration:revert -- -d src/_config/data-source.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.1"
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.3",
+    "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/node": "^22.13.5",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
   }
 }

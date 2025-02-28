@@ -1,0 +1,5 @@
+CREATE USER spsuser;
+
+CREATE DATABASE spsapp;
+
+GRANT ALL PRIVILEGES ON DATABASE spsapp TO spsuser;
